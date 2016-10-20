@@ -18,26 +18,34 @@ document.body.appendChild(box);
 
 function creandoTexto() {
   var caja = document.createElement("div");
-  body.appendChild(caja);
+  var contenedor = document.createElement("div");
   var texto=document.createElement("input")
-  texto.placeholder="Tìtulo"
-  texto.style.display="block";
-  caja.appendChild(texto);   
-  caja.setAttribute("id","caja");
   var btn = document.createElement("button");
-  btn.innerText = "publicar";
-  btn.style.display="block";
-
   var btnCerrar = document.createElement("button");
-  btnCerrar.innerText = "cerrar"
   var textarea = document.createElement("textarea");
+
+  caja.setAttribute("id","caja");
+  contenedor.setAttribute("class" ,"contenedor");
+  texto.setAttribute("class","texto")
   textarea.setAttribute("id", "texto-publicar");
-  caja.appendChild(textarea);
+  btn.classList.add("btn");
+  btnCerrar.classList.add("btncerrar");
+
+  texto.placeholder="Tìtulo"
+  btn.innerText = "publicar";
+  btnCerrar.innerText = "cerrar"
+
+  caja.appendChild(contenedor);
+  body.appendChild(caja);
+  contenedor.appendChild(texto);
+  contenedor.appendChild(textarea);
   textarea.parentNode.appendChild(btn);
   textarea.parentNode.appendChild(btnCerrar);
   btn.addEventListener("click",btnPublicar);
   textarea.placeholder="Aquì va el texto";
   return textarea; 
+
+
 }
 function creandoCita() {
   var caja = document.createElement("div");
